@@ -1,0 +1,214 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+/* General Styles */
+html,
+body {
+    background-color: #080808; /* Dark background for the whole page */
+    color: #ffffff; /* White text */
+    font-family: "Lexend Deca", sans-serif; /* Standard font */
+    margin: 0;
+    padding: 20px;
+    flex-direction: column; /* Organizes the children elements (header, main, footer) in a column */
+}
+
+.product-container {
+    background: #121212;
+    display: flex; /* Ensures side-by-side layout for image section and details */
+    align-items: center; /* Aligns items at the top */
+    max-width: 1500px; /* Maximum width of the container */
+    margin: auto; /* Centering the container */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2rem;
+}
+
+.title {
+    font-family: Lexend Deca;
+    color: #008cff;
+}
+
+.sub-title {
+    font-family: Lexend Deca;
+}
+
+/* Image Section Styling */
+.image-section {
+    position: relative; /* For positioning thumbnails absolutely */
+    width: 500px; /* Fixed width for the image container */
+    height: 500px; /* Fixed height for the image container */
+}
+
+.thumbnails {
+    position: absolute; /* Absolutely position thumbnails */
+    top: 20px; /* Space from the top */
+    left: 20px; /* Space from the left */
+    display: flex; /* Align thumbnails in a column */
+    flex-direction: column; /* Stack vertically */
+    gap: 20px; /* Space between thumbnails */
+    z-index: 2; /* Ensures thumbnails layer over the main image */
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+}
+
+.thumbnail-image {
+    width: 50px; /* Fixed width for thumbnails */
+    height: 50px; /* Fixed height for thumbnails */
+    cursor: pointer;
+    object-fit: cover; /* Ensures images fit the boxes without stretching */
+    opacity: 0.6; /* Slightly transparent */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    outline: 1px solid #ffffff3d;
+    border-radius: 1rem;
+}
+
+.thumbnail-image:hover {
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.2);
+}
+
+.main-image {
+    height: 100%; /* Full height of the container */
+    width: 100%; /* Full width of the container */
+    padding: 20px;
+}
+
+.main-image img {
+    height: 100%; /* Full height of the container */
+    width: 100%; /* Full width of the container */
+    object-fit: contain;
+}
+
+/* Product Details Styling */
+.product-details {
+    margin-left: 40px;
+    width: 50%; /* Half of the container */
+    padding: 40px; /* Padding around the content */
+    display: flex;
+    gap: 15px;
+    flex-direction: column; /* Organize content vertically */
+    justify-content: center; /* Center content vertically */
+    background: #121212; /* Slightly lighter dark background */
+    border-left: 2px solid #0066b9b4; /* Green line separator */
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-right: 20px;
+    height: 100%;
+}
+
+.add-to-cart {
+    font-family: Lexend Deca;
+    background-color: #0066b9d0; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Push to bottom */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.add-to-cart:hover {
+    background-color: #00325c; /* Darker green on hover */
+}
+
+header {
+    background-color: #121212; /* Dark background for the header */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: fixed; /* Keeps the header fixed at the top */
+    width: 100%; /* Ensures the header spans the full width */
+    top: 0; /* Aligns the header to the top of the viewport */
+    left: 0; /* Aligns the header to the left of the viewport */
+    z-index: 1000; /* Ensures the header stays on top of other content */
+    border-bottom: 2px solid #0066b9b4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px; /* Adjust based on your logo's dimensions */
+    border-radius: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* This will line up the links horizontally */
+}
+
+nav ul li {
+    margin-left: 80px;
+}
+
+nav a {
+    position: relative;
+    color: rgb(143, 143, 143);
+    font-size: 16px;
+    font-family: Lexend Deca;
+}
+
+.navbar ul li a {
+    color: #ffffff7c; /* Default link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    padding-bottom: 2px;
+}
+
+.navbar ul li a:hover {
+    color: #ffffff; /* Change link color on hover */
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0066b9b4;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+    color: rgb(194, 194, 194);
+}
+
+main {
+    padding-top: 80px; /* Add padding to top of main content to prevent it from being hidden behind the fixed header */
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    margin-left: 70px;
+}
+
+#search-box {
+    margin-left: 20px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #cccccca6;
+    background-color: #121212;
+    color: #ffffff;
+    outline: none;
+    width: 0;
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.4s ease;
+    display: none;
+}
